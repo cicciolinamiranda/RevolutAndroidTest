@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Revolut Android Test</string>
+    <string name="app_name">Revolut Android</string>
+    <string name="label_rates">Rates</string>
 </resources>
