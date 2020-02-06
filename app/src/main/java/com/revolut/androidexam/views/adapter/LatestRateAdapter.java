@@ -3,6 +3,7 @@ package com.revolut.androidexam.views.adapter;
 import android.content.Context;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -20,6 +21,7 @@ import com.revolut.androidexam.model.dto.RateDTO;
 import com.revolut.androidexam.model.repository.LocalStorage;
 import com.revolut.androidexam.util.Logger;
 import com.revolut.androidexam.util.Mappers;
+import com.revolut.androidexam.views.custom.CircleImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -129,7 +131,7 @@ public class LatestRateAdapter extends RecyclerView.Adapter<LatestRateAdapter.Vi
         EditText currencyEditText;
 
         @BindView(R.id.flag_image_view)
-        ImageView flagImageView;
+        CircleImageView flagImageView;
 
         @BindView(R.id.text_iso)
         TextView textIso;

@@ -23,6 +23,8 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.michaelrocks.paranoid.Obfuscate;
+
+import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 @Obfuscate
@@ -47,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements LatestRateRule.IL
         setContentView(R.layout.activity_main);
         RevolutApplication.getInjector().inject(this);
         ButterKnife.bind(this);
+
+        getSupportActionBar().setTitle(getString(R.string.label_rates));
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
