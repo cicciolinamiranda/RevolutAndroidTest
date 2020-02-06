@@ -46,6 +46,7 @@
 -keep class * extends dagger.internal.Binding
 -keep class * extends dagger.internal.ModuleAdapter
 -keep class * extends dagger.internal.StaticInjection
+-dontwarn com.ryanharter.auto.value.gson.GenerateTypeAdapter
 
 #https://github.com/google/auto
 -dontwarn autovalue.shaded.com.**

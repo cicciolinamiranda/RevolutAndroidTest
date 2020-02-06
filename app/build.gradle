@@ -1,5 +1,23 @@
 apply plugin: 'com.android.application'
 apply plugin: 'io.michaelrocks.paranoid'
+ext.versionMajor = 1
+ext.versionMinor = 0
+ext.versionPatch = 0
+ext.buildNum = 1
+
+private Integer generateVersionCode() {
+    return ext.versionMajor * 10000 + ext.versionMinor * 100 + ext.versionPatch
+}
+
+private String generateVersionName() {
+    String versionName = "${ext.versionMajor}.${ext.versionMinor}.${ext.versionPatch} (${ext.buildNum})"
+    return versionName;
+}
+
+private String generateApkFileName() {
+    String apkName = "revolut_android_${ext.versionMajor}.${ext.versionMinor}.${ext.versionPatch}(${ext.buildNum})"
+    return apkName;
+}
 
 android {
     compileSdkVersion 28
@@ -7,15 +25,27 @@ android {
         applicationId "com.revolut.androidexam"
         minSdkVersion 18
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode generateVersionCode()
+        versionName generateVersionName()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "boolean", "SHOW_LOGS", "true"
         buildConfigField "String", "BASE_URL", "\"https://revolut.duckdns.org/\""
     }
+
+    signingConfigs {
+        release {
+            storeFile file("../revolut_android.jks")
+            storePassword "revolut_android"
+            keyAlias "revolut_android"
+            keyPassword "revolut_android"
+        }
+    }
+
     buildTypes {
         debug {
             debuggable true
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
@@ -24,8 +54,16 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${generateApkFileName()}-${variant.baseName}.apk"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
