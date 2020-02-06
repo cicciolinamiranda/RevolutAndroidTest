@@ -24,7 +24,7 @@ public class LocalStorage {
         return remoteRateDTO;
     }
 
-    public RemoteRateDTO getRemoteRate() {
+    public RemoteRateDTO getRemoteRates() {
         return Hawk.get(getRateKey());
     }
 

@@ -34,7 +34,7 @@ public class Repository implements InterfaceRepository {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(localStorage::saveCurrencies)
-                .onErrorReturn(throwable -> localStorage.getCurrencies())
+                .onErrorReturn(throwable -> localStorage.getRemoteRates())
                 .filter((remoteCurrencyDTO) -> !amount.equals(0.0))
                 .map(Mappers::mapRemoteToLocal)
                 .onErrorReturn(throwable -> new ArrayList<>());
