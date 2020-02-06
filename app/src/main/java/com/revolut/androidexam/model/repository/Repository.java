@@ -33,7 +33,7 @@ public class Repository implements InterfaceRepository {
         return currencyAPI.getRates(base, amount)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .map(localStorage::saveCurrencies)
+                .map(localStorage::saveRemoteRates)
                 .onErrorReturn(throwable -> localStorage.getRemoteRates())
                 .filter((remoteCurrencyDTO) -> !amount.equals(0.0))
                 .map(Mappers::mapRemoteToLocal)

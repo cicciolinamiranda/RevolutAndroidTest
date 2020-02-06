@@ -19,7 +19,7 @@ public class LocalStorage {
     public LocalStorage() {
     }
 
-    public RemoteRateDTO saveCurrencies(RemoteRateDTO remoteRateDTO) {
+    public RemoteRateDTO saveRemoteRates(RemoteRateDTO remoteRateDTO) {
         Hawk.put(getRateKey(), remoteRateDTO);
         return remoteRateDTO;
     }

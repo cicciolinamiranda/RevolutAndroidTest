@@ -2,8 +2,10 @@ package com.revolut.androidexam.dagger;
 
 import com.revolut.androidexam.RevolutApplication;
 import com.revolut.androidexam.model.repository.Repository;
+import com.revolut.androidexam.presenter.LatestRatePresenter;
 import com.revolut.androidexam.service.SchedulerService;
 import com.revolut.androidexam.views.activities.MainActivity;
+import com.revolut.androidexam.views.adapter.LatestRateAdapter;
 
 import javax.inject.Singleton;
 
@@ -22,12 +24,12 @@ public interface Injector {
 
     void inject(MainActivity mainActivity);
 
-//    void inject(LastCurrencyPresenter lastCurrencyPresenter);
-//
+    void inject(LatestRatePresenter latestRatePresenter);
+
     void inject(Repository repository);
-//
-//    void inject(LastCurrencyAdapter adapter);
-//
+
+    void inject(LatestRateAdapter latestRateAdapter);
+
     void inject(SchedulerService schedulerService);
 
 }

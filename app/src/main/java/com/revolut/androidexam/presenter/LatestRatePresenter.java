@@ -3,6 +3,7 @@ package com.revolut.androidexam.presenter;
 import android.content.Context;
 import android.content.Intent;
 
+import com.revolut.androidexam.RevolutApplication;
 import com.revolut.androidexam.base.BasePresenter;
 import com.revolut.androidexam.base.LatestRateRule;
 import com.revolut.androidexam.model.repository.LocalStorage;
@@ -30,6 +31,11 @@ public class LatestRatePresenter extends BasePresenter<LatestRateRule.ILatestRat
     Context context;
     @Inject
     LocalStorage storage;
+
+    @Inject
+    public LatestRatePresenter() {
+        RevolutApplication.getInjector().inject(this);
+    }
 
     @Override
     public void getLatestRate(String code, Double amount) {
