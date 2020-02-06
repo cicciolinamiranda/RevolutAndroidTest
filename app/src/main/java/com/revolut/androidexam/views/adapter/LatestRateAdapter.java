@@ -110,7 +110,7 @@ public class LatestRateAdapter extends RecyclerView.Adapter<LatestRateAdapter.Vi
         setVolatileRateValues(zeroList);
     }
 
-    private void setVolatileRateValues(List<RateDTO> rateDTOList) {
+    public void setVolatileRateValues(List<RateDTO> rateDTOList) {
         LOGGER.log("LatestRateAdapter setDefaultRateValues");
 
         for (int index = actualList.size() - 1; index > 0; index--)
