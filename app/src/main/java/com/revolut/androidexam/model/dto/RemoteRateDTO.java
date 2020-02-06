@@ -1,4 +1,4 @@
-package com.revolut.androidexam.dto;
+package com.revolut.androidexam.model.dto;
 
 import com.google.auto.value.AutoValue;
 import com.google.gson.Gson;

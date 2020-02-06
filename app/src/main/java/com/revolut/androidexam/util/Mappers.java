@@ -1,7 +1,7 @@
 package com.revolut.androidexam.util;
 
-import com.revolut.androidexam.dto.Rate;
-import com.revolut.androidexam.dto.RemoteRateDTO;
+import com.revolut.androidexam.model.dto.RateDTO;
+import com.revolut.androidexam.model.dto.RemoteRateDTO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,10 +9,10 @@ import java.util.Map;
 
 public class Mappers {
 
-    public static List<Rate> mapRemoteToLocal(RemoteRateDTO remoteRateDTO){
-        List<Rate> list = new ArrayList<>();
+    public static List<RateDTO> mapRemoteToLocal(RemoteRateDTO remoteRateDTO){
+        List<RateDTO> list = new ArrayList<>();
         for(Map.Entry<String, Double> current: remoteRateDTO.rates().entrySet())
-            list.add(Rate.create(current.getKey(), current.getValue()));
+            list.add(RateDTO.create(current.getKey(), current.getValue()));
         return list;
     }
 

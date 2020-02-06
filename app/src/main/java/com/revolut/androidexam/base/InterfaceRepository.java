@@ -1,13 +1,13 @@
 package com.revolut.androidexam.base;
 
-import android.database.Observable;
-
-import com.revolut.androidexam.dto.Rate;
+import com.revolut.androidexam.model.dto.RateDTO;
 
 import java.util.List;
 
+import rx.Observable;
+
 public interface InterfaceRepository {
 
-    Observable<List<Rate>> updateRates(String base, Double amount);
+    Observable<List<RateDTO>> updateRates(String base, Double amount);
 
 }

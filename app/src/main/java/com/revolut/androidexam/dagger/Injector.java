@@ -1,6 +1,7 @@
 package com.revolut.androidexam.dagger;
 
 import com.revolut.androidexam.RevolutApplication;
+import com.revolut.androidexam.model.repository.Repository;
 import com.revolut.androidexam.views.activities.MainActivity;
 
 import javax.inject.Singleton;
@@ -22,7 +23,7 @@ public interface Injector {
 
 //    void inject(LastCurrencyPresenter lastCurrencyPresenter);
 //
-//    void inject(Repository repository);
+    void inject(Repository repository);
 //
 //    void inject(LastCurrencyAdapter adapter);
 //

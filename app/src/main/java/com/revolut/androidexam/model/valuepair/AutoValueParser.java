@@ -1,4 +1,4 @@
-package com.revolut.androidexam.valuepair;
+package com.revolut.androidexam.model.valuepair;
 
 import android.text.TextUtils;
 

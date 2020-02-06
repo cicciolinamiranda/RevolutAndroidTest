@@ -1,13 +1,13 @@
 package com.revolut.androidexam.base;
 
-import com.revolut.androidexam.dto.Rate;
+import com.revolut.androidexam.model.dto.RateDTO;
 
 import java.util.List;
 
 public interface LatestRateRule {
 
     interface ILatestRateView extends InterfaceView {
-        void onRateUpdated(List<Rate> list);
+        void onRateUpdated(List<RateDTO> list);
         void onNoDataAvailable();
     }
 

@@ -10,7 +10,7 @@ import com.revolut.androidexam.dagger.ContextModule;
 import com.revolut.androidexam.dagger.DaggerInjector;
 import com.revolut.androidexam.dagger.Injector;
 import com.revolut.androidexam.util.Logger;
-import com.revolut.androidexam.valuepair.AutoValueParser;
+import com.revolut.androidexam.model.valuepair.AutoValueParser;
 
 public class RevolutApplication extends Application {
 

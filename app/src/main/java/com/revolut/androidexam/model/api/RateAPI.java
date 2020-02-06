@@ -1,10 +1,8 @@
 package com.revolut.androidexam.model.api;
 
-import android.database.Observable;
-
 import com.google.gson.GsonBuilder;
 import com.revolut.androidexam.BuildConfig;
-import com.revolut.androidexam.dto.RemoteRateDTO;
+import com.revolut.androidexam.model.dto.RemoteRateDTO;
 import com.ryanharter.auto.value.gson.AutoValueGsonTypeAdapterFactory;
 
 import java.util.concurrent.TimeUnit;
@@ -18,6 +16,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
+import rx.Observable;
 
 public interface RateAPI {
 
